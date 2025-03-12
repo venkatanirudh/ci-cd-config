@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        ARGOCD_SERVER = 'localhost:32095'  // Update to your ArgoCD server address
+        ARGOCD_SERVER = 'localhost:30392'  // Update to your ArgoCD server address
     }
     stages {
         stage('Check Docker') {
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'artifactory-token', variable: 'JFROG_TOKEN')]) {
                     sh '''
-                        echo $JFROG_TOKEN | docker login perry2011.jfrog.io -u <your-email> --password-stdin
+                        echo $JFROG_TOKEN | docker login perry2011.jfrog.io -u venkatanirudh.pillala@gmail.com --password-stdin
                         docker tag my-python-app:latest perry2011.jfrog.io/docker-repo/my-python-app:latest
                         docker push perry2011.jfrog.io/docker-repo/my-python-app:latest
                     '''
