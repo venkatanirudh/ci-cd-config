@@ -18,9 +18,9 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'artifactory-token', variable: 'JFROG_TOKEN')]) {
                     sh '''
-                        echo $JFROG_TOKEN | docker login perry2011.jfrog.io -u venkatanirudh.pillala@gmail.com --password-stdin
-                        docker tag my-python-app:latest perry2011.jfrog.io/docker-repo/my-python-app:latest
-                        docker push perry2011.jfrog.io/docker-repo/my-python-app:latest
+                        echo $JFROG_TOKEN | docker login trial5tk4k8.jfrog.io -u venkatanirudh.pillala@gmail.com --password-stdin
+                        docker tag my-python-app:latest trial5tk4k8.jfrog.io/docker-repo/my-python-app:latest
+                        docker push trial5tk4k8.jfrog.io/docker-repo/my-python-app:latest
                     '''
                 }
             }
