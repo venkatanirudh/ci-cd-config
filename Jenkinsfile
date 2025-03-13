@@ -15,6 +15,12 @@ pipeline {
                 sh 'docker --version'
             }
         }
+        stage('Clone Python App Repository') {
+            steps {
+                // Clone the my-python-app repository
+                git branch: 'main', url: 'https://github.com/venkatanirudh/my-python-app.git'
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t my-python-app .'
