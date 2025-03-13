@@ -4,6 +4,11 @@ pipeline {
         ARGOCD_SERVER = 'localhost:30392'  // Update to your ArgoCD server address
     }
     stages {
+        stage('Debug Environment') {
+            steps {
+                sh 'echo $PATH'
+            }
+        }
         stage('Check Docker') {
             steps {
                 sh 'docker --version'
