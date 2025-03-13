@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         ARGOCD_SERVER = 'localhost:30392'  // Update to your ArgoCD server address
+        PATH = "/usr/local/bin:${env.PATH}"  
     }
     stages {
         stage('Debug Environment') {
