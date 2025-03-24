@@ -25,11 +25,9 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image from the cloned repository
-                    dir('my-python-app') { // Navigate to the cloned repository directory
-                        sh 'docker build -t my-python-app .'
+                    sh 'docker build -t my-python-app .'
                     }
                 }
-            }
         }
         stage('Push to JFrog Artifactory') {
             steps {
