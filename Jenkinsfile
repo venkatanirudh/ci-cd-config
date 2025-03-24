@@ -8,6 +8,7 @@ pipeline {
         stage('Debug Environment') {
             steps {
                 sh 'echo $PATH'
+                sh 'which argocd || echo "argocd not found"'
             }
         }
         stage('Check Docker') {
