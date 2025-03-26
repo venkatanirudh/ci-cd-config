@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        ARGOCD_SERVER = 'localhost:30392'  // Update to your ArgoCD server address
+        ARGOCD_SERVER = '192.168.64.2:32041'  // Update to your ArgoCD server address
         PATH = "/opt/homebrew/bin:${env.PATH}"  
     }
     stages {
